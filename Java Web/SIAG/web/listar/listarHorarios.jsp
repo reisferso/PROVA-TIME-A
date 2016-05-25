@@ -7,6 +7,7 @@
         <link href="${SUBDIR}/assets/validation_js/ajax.css" rel="stylesheet" type="text/css" />
         <link href="${SUBDIR}/assets/global/plugins/datatables/datatables.min.css" rel="stylesheet" type="text/css" />
         <link href="${SUBDIR}/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" rel="stylesheet" type="text/css" />
+        <link href="${SUBDIR}/assets/global/css/ajax.css" rel="stylesheet" type="text/css" />
     </jsp:attribute>
 
     <jsp:attribute name="jsfiles">

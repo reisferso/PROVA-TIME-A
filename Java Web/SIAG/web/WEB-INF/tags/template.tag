@@ -94,26 +94,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     -->
                     <!-- END HEADER SEARCH BOX -->
 
-                    <!-- BEGIN TOP NAVIGATION MENU -->
-                    <div class="top-menu">
-                        <ul class="nav navbar-nav pull-right">
-                            <li class="separator hide"> </li>
-                                <jsp:include page="/layout/notificacao.jsp" />
-                            <li class="separator hide"> </li>
-                                <jsp:include page="/layout/mensagens.jsp" />
-                            <li class="separator hide"> </li>
-                                <jsp:include page="/layout/tarefas.jsp" />
-                                <jsp:include page="/layout/usuario.jsp" />
-                            <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-                            <!--
-                            <li class="dropdown dropdown-extended quick-sidebar-toggler">
-                                <span class="sr-only">Toggle Quick Sidebar</span>
-                                <i class="icon-logout"></i>
-                            </li>
-                            -->
-                            <!-- END QUICK SIDEBAR TOGGLER -->
-                        </ul>
-                    </div>
+                  
                     <!-- END TOP NAVIGATION MENU -->
                 </div>
                 <!-- END PAGE TOP -->
@@ -162,7 +143,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- END CONTENT BODY -->
                 </div>
                 <!-- END CONTENT -->
-                <jsp:include page="/layout/quick_sidebar.jsp" />
+            
             </div>
             <!-- END CONTAINER -->
             <!-- BEGIN FOOTER -->
