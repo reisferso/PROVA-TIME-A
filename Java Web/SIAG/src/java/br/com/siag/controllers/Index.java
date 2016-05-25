@@ -14,9 +14,6 @@ public class Index extends Controller{
     }    
     
     public void index() throws ServletException, IOException{
-        //for(int i = 0; i<args.length; i++){
-        //    System.out.println("arg["+Integer.toString(i)+"] = "+args[i]);
-        //}
         session.setAttribute("Titulo", "Index");
         request.getRequestDispatcher("/index.jsp").forward(request, response);
     }

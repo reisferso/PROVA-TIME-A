@@ -9,7 +9,10 @@ import br.com.siag.beans.AgendaBean;
 import br.com.siag.dao.AgendamentoDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -42,5 +45,38 @@ public class AgendamentoJDBC implements AgendamentoDAO {
         }
 
         return b;
+    }
+
+    @Override
+    public List<AgendaBean> listarAgendamento(String CPF) {
+        List<AgendaBean> listHorarios = new ArrayList<>();
+        AgendaBean horario;
+        PreparedStatement pst;
+        ResultSet rs;
+        StringBuilder sql = new StringBuilder();
+        
+        sql.append("SELECT tbl_aluno.*, tbl_agendamento.*,tbl_servico.*, tbl_disponibilidade.* ,tbl_agendamento.* FROM tbl_agendamento ");
+        sql.append("INNER JOIN tbl_aluno ON tbl_aluno.codigo = tbl_agendamento.cod_aluno ");
+        sql.append("INNER JOIN tbl_servico ON tbl_servico.codigo = tbl_agendamento.cod_servico ");
+        sql.append("INNER JOIN tbl_disponibilidade ON tbl_disponibilidade.codigo = tbl_agendamento.cod_dia ");
+        sql.append("WHERE tbl_aluno.cpf_aluno='"+CPF+"'");
+        
+        try{
+            pst = conexao.prepareStatement(sql.toString());
+            rs = pst.executeQuery();
+            while(rs.next()){
+                horario = new AgendaBean();
+                horario.setHorario(rs.getString("tbl_disponibilidade.hora"));
+                horario.setNome_aluno(rs.getString("tbl_aluno.nome_aluno"));
+                horario.setData(rs.getDate("tbl_disponibilidade.dia"));
+                listHorarios.add(horario);
+                System.out.println(listHorarios);
+            }
+            pst.close();
+            rs.close();
+        }catch(SQLException ex){
+            System.out.println("ERRO AO LISTAR AGENDA --- ERRO || "+ex);
+        }
+        return listHorarios;
     }
 }

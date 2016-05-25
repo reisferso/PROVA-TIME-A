@@ -34,40 +34,7 @@ public void doFilter(ServletRequest request, ServletResponse response,
         String SUBDIR = req.getAttribute("SUBDIR").toString();
         String requestURI = req.getAttribute("requestURI").toString();
         String[] uri = (String[]) req.getAttribute("URI");
-        
-        if (sistema.equalsIgnoreCase("publico")){
-            autenticado = true;
-            autorizado = true;
-            request.setAttribute("MENU", "publico");
-        } else {
-            if (autenticado){
-                String UserSys = sessao.getAttribute("UserSystem").toString();
-                if (sistema.equalsIgnoreCase("admin")){
-                    if (UserSys.equalsIgnoreCase("A")) autorizado = true;
-                    request.setAttribute("MENU", "admin");
-                } else if (sistema.equalsIgnoreCase("desif")){
-                    if (UserSys.equalsIgnoreCase("D")) autorizado = true;
-                    request.setAttribute("MENU", "desif");
-                } else if (sistema.equalsIgnoreCase("nfse")){
-                    if (UserSys.equalsIgnoreCase("N")) autorizado = true;
-                    request.setAttribute("MENU", "nfse");
-                } else {
-                    autenticado = false;
-                    autorizado = false;
-                    request.setAttribute("MENU", "publico");
-                }
-            }
-        }
-        
-        if (!autenticado){
-            res.sendRedirect(SUBDIR+"/Login");
-            return;
-        }
-        
-        if (!autorizado){
-            res.sendRedirect(SUBDIR+"/NaoAutorizado");
-            return;
-        }
+       
         
         chain.doFilter(request, response);
         

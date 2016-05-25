@@ -6,6 +6,7 @@
 package br.com.siag.dao;
 
 import br.com.siag.beans.AgendaBean;
+import java.util.List;
 
 /**
  *
@@ -18,4 +19,11 @@ public interface AgendamentoDAO {
      * @return Insere agendamento no banco de dados
      */
     boolean agendarAula(AgendaBean agendamento);
+    
+    /**
+     * 
+     * @param CPF
+     * @return Listagem de agendamento filtrando pelo CPF do aluno
+     */
+    List<AgendaBean> listarAgendamento(String CPF);
 }

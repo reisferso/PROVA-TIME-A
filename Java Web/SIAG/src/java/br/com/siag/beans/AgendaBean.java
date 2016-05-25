@@ -5,6 +5,8 @@
  */
 package br.com.siag.beans;
 
+import java.util.Date;
+
 /**
  *
  * @author marcus
@@ -18,6 +20,45 @@ public class AgendaBean {
     private Integer cat_servico;
     private Integer servico;
     private Integer guiche;
+    
+    
+    private String nome_aluno;
+    private String horario;
+    private Date   data;
+    private String nome_servico;
+
+    public String getNome_aluno() {
+        return nome_aluno;
+    }
+
+    public void setNome_aluno(String nome_aluno) {
+        this.nome_aluno = nome_aluno;
+    }
+
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        this.horario = horario;
+    }
+
+    public Date getData() {
+        return data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
+    }
+
+    public String getNome_servico() {
+        return nome_servico;
+    }
+
+    public void setNome_servico(String nome_servico) {
+        this.nome_servico = nome_servico;
+    }
+    
 
     public Integer getId_agenda() {
         return id_agenda;
