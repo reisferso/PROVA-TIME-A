@@ -14,6 +14,13 @@
             <i class="fa fa-clock-o"></i>
             <span class="title">Agendar Horário</span>
         </a>
+        
+    </li>
+    <li class="nav-item  ">       
+        <a href="${SUBDIR}/Horario/listar">
+            <i class="icon-note"></i>
+            <span class="title">Meus Agendamentos</span>
+        </a>
     </li>
 </ul>
 <!-- END SIDEBAR MENU -->

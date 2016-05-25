@@ -68,10 +68,6 @@
         <servlet-name>ControllerServlet</servlet-name>
         <url-pattern>/ControllerServlet</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Relatorio</servlet-name>
-        <url-pattern>/relatorio.pdf</url-pattern>
-    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

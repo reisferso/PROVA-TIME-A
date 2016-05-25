@@ -17,7 +17,7 @@
         
     </li>
     <li class="nav-item  ">       
-        <a href="${SUBDIR}/Horario/procurar">
+        <a href="${SUBDIR}/Horario/listar">
             <i class="icon-note"></i>
             <span class="title">Meus Agendamentos</span>
         </a>
